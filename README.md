@@ -1,16 +1,16 @@
-# Phone number
+# React Phone Number
 
-Render a phone number
+A React component for rendering a phone number.
 
 
 ## Usage
 
-`npm install phone-number`
+`npm install --save react-phone-number`
 
 And then:
 
 ```javascript
-import PhoneNumber from 'phone-number';
+import PhoneNumber from 'react-phone-number';
 ```
 
 ```html
