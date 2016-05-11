@@ -17,3 +17,16 @@ import PhoneNumber from 'react-phone-number';
 <PhoneNumber number="+61412345678" />
 <PhoneNumber number={user.phone} />
 ```
+
+You can also have the a `tel:` link automatically added:
+
+```html
+<PhoneNumber number={user.phone} isLinked={true} />
+```
+
+
+## Testing
+
+Install Babel CLI (`npm install -g babel-cli`) then then:
+
+`npm test`

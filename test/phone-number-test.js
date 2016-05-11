@@ -1,38 +1,56 @@
-import '../.dontmock.jest';
+const Lab = require('lab');
+const React = require('react');
+const { shallow } = require('enzyme');
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import TestUtils from 'react-addons-test-utils';
+const expect = require('code').expect;
+const lab = exports.lab = Lab.script();
 
-import PhoneNumber from '..';
+const PhoneNumber = require('../lib');
 
 
-describe('PhoneNumber', () => {
-    
-    it('renders an international phone number', () => {
-        var phoneNumber = TestUtils.renderIntoDocument(
+lab.experiment('PhoneNumber', () => {
+    lab.test('renders an international phone number', (done) => {
+        let container = shallow(
             <PhoneNumber number="+61412345678" />
         );
         
-        expect(ReactDOM.findDOMNode(phoneNumber).textContent).toEqual("+61 412 345 678");
+        expect(container.html()).to.contain("+61 412 345 678");
+        
+        done();
     });
     
     
-    it('renders a mobile phone number', () => {
-        var phoneNumber = TestUtils.renderIntoDocument(
+    lab.test('renders a mobile phone number', (done) => {
+        let container = shallow(
             <PhoneNumber number="0412345678" />
         );
         
-        expect(ReactDOM.findDOMNode(phoneNumber).textContent).toEqual("0412 345 678");
+        expect(container.html()).to.contain("0412 345 678");
+        
+        done();
     });
     
     
-    it('renders a landline phone number', () => {
-        var phoneNumber = TestUtils.renderIntoDocument(
+    lab.test('renders a landline phone number', (done) => {
+        let container = shallow(
             <PhoneNumber number="12345678" />
         );
         
-        expect(ReactDOM.findDOMNode(phoneNumber).textContent).toEqual("12 345 678");
+        expect(container.html()).to.contain("12 345 678");
+        
+        done();
+    });
+    
+    
+    lab.test('links to a tel:', (done) => {
+        let container = shallow(
+            <PhoneNumber number="12345678" isLinked={true} />
+        );
+        
+        expect(container.html()).to.contain("12 345 678");
+        expect(container.html()).to.contain("<a href=\"tel:12345678\">");
+        
+        done();
     });
     
 });
