@@ -2,7 +2,7 @@ const React = require('react');
 
 
 const PhoneNumber = ({ number, isLinked, className }) => {
-    number = number.replace(/[^0-9\+]+/g, '').replace(/\s+/, '');
+    number = number.toString().replace(/[^0-9\+]+/g, '').replace(/\s+/, '');
     
     let formatted_number;
 

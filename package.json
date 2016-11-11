@@ -4,10 +4,9 @@
   "description": "A React component for displaying phone numbers",
   "main": "lib/index.js",
   "scripts": {
-    "lab": "NODE_ENV=test node --use_strict node_modules/.bin/lab --ignore __core-js_shared__ -T node_modules/lab-babel",
+    "lab": "NODE_ENV=test node --use_strict node_modules/.bin/lab --ignore __core-js_shared__,Reflect -T node_modules/lab-babel",
     "test": "npm run compile && npm run lab test",
-    "compile": "babel -d lib/ src/",
-    "prepublish": "npm test"
+    "compile": "babel -d lib/ src/"
   },
   "repository": {
     "type": "git",
@@ -23,8 +22,8 @@
     "url": "https://github.com/nathanhoad/react-phone-number/issues"
   },
   "homepage": "https://github.com/nathanhoad/react-phone-number#readme",
-  "dependencies": {
-    "react": "^15.0.2"
+  "devDependencies": {
+    "react": "*"
   },
   "devDependencies": {
     "babel-core": "^6.7.6",
