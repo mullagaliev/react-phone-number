@@ -1,6 +1,6 @@
 {
   "name": "react-phone-number",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A React component for displaying phone numbers",
   "main": "lib/index.js",
   "scripts": {
@@ -22,9 +22,6 @@
     "url": "https://github.com/nathanhoad/react-phone-number/issues"
   },
   "homepage": "https://github.com/nathanhoad/react-phone-number#readme",
-  "devDependencies": {
-    "react": "*"
-  },
   "devDependencies": {
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
