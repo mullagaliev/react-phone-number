@@ -22,16 +22,6 @@ const PhoneNumber = ({ number, isLinked, className }) => {
 };
 
 
-PhoneNumber.propTypes = {
-    number: React.PropTypes.oneOfType([
-        React.PropTypes.number,
-        React.PropTypes.string
-    ]).isRequired,
-    isLinked: React.PropTypes.bool,
-    className: React.PropTypes.string
-};
-
-
 PhoneNumber.defaultProps = {
     isLinked: false
 };
